@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
-    registrations: 'users/registrations'
-  }
-  get 'users/todos'
-  root to:'users#todos'
+  get 'todos/index'
+  root to: 'todos#index'
+  resources :todos, only: :index
+  devise_for :users
 end
