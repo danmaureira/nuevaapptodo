@@ -9,4 +9,7 @@ before_action :authenticate_user!
       redirect_to todos_path  alert: 'No se marcó como completa'
     end
   end
+  def index
+    @estados = current_user.estados
+  end
 end
