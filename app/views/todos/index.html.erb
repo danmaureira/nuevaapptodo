@@ -5,12 +5,15 @@
    <% @todos.each_slice(4) do |row| %>
     <% row.each do |todo| %>
       <div class="col">
-       <%= image_tag todo.photo, class: 'img-responsive' %>
-       <h3> <%= todo.name%> </h3>
-       <P> <%= todo.description%> </p>
+        <div class="card">
+          <%= image_tag todo.photo, class: 'card-img-top' %>
+          <h3> <%= todo.name%> </h3>
+          <p> <%= todo.description%> </p>
+          <%= link_to "Task", "#", class:'btn btn-success'%>
+        </div>
       </div>
      <% end %>
-     <div class="w-100"></div>
+     <div class="w-100" style="margin-top:20px"></div>
    <% end %>
   </div>
 </div>
