@@ -6,6 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
+Todo.destroy_all
+
 10.times do |i|
   User.create(email:"usuarioseed#{i+1}@gmail.com", password: '12345678')
+end
+
+10.times do |i|
+  Todo.create(
+    name: "tarea #{i+1}",
+    photo: "http://lorempixel.com/400/200/nightlife/#{i+1}",
+    description: "Soy una tarea diciochera",
+  )
 end
