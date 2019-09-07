@@ -9,7 +9,7 @@
           <%= image_tag todo.photo, class: 'card-img-top' %>
           <h3> <%= todo.name%> </h3>
           <p> <%= todo.description%> </p>
-          <%= link_to "Task", "#", class:'btn btn-success'%>
+          <%= link_to "Task", todo_estados_path(todo), class:'btn btn-success', method: :post%>
         </div>
       </div>
      <% end %>

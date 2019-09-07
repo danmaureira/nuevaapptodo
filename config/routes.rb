@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  get 'todos/index'
+  get 'estados/create'
+  resources :todos, only: :index do
+    resources :estados, only: :create
+  end
   root to: 'todos#index'
-  resources :todos, only: :index
   devise_for :users
 end
